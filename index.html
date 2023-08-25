@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html>   
+<head>
+        <title>Ana Paula Cedillo | Student Page</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style> 
+        strong {background-color: rgb(23, 92, 23);
+        color:antiquewhite;}
+
+        h1 {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: black;
+        margin:0px;
+        text-align: center;
+        font-size: 3em;
+        text-shadow: 5px 5px 10px #fff ;
+        }   
+
+        h2 {
+            text-align:center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.2em;
+            margin-top: 5px;
+            margin-bottom:30px;
+        }
+        
+        h3 {
+            text-align:center;
+        }
+
+        #content {
+            width:1000px;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top:40px;
+        }
+
+        #wrapper{
+            display:flex; 
+            height:500px;
+            width:1000px;
+        }
+
+        #left {
+            width:500px;
+            border: 1px dotted #000;
+        }
+
+        #right {
+            width: 500px;
+            border:1px dotted #000;
+        }
+        
+        #button {
+        background-color: #D3C1D2;
+        border:1px dashed #000;
+        width: 150px;
+        color:#fff;
+        margin-right:auto;
+        margin-left: auto;
+        text-align: center;
+        margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="content">
+    <h1>Ana Pau Cedillo</h1>
+    <h2><a href="mailto:anapauce@usc.edu">anapauce@usc.edu</a></h2>
+
+        <div id="button"> 
+            <p>Favorite Color</p>
+        </div>
+        <div id="wrapper">
+            <div id="left">
+                <h3><u>Labs</u></h3>
+                <ul>
+                    <li><a href="index.html" target="_blank">Lab 1</a></li>
+                </ul>
+            </div>
+            <div id="right">
+                <h3><u>Assignments</u></h3>
+                <ul>
+                    <li>Assignment 1</li>
+                </ul>
+            </div>
+        </div>
+</div>
+<script>
+    document.querySelector('#button').onclick = function(){
+        document.querySelector('body').style.backgroundColor= '#D3C1D2';
+        document.querySelector('#button').style.backgroundColor= '#FFF';
+        document.querySelector('#button p').style.color= '#000';
+    }
+</script>
+</body>
+</html>
