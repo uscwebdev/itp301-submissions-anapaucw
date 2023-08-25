@@ -51,14 +51,17 @@
             width: 500px;
             border:1px dotted #000;
         }
+
+        button {
+            margin-left:450px;
+            align-items: center;
+            cursor:pointer;
+        }
         
-        #button {
+        #button-click {
         background-color: #D3C1D2;
         border:1px dashed #000;
-        width: 150px;
         color:#fff;
-        margin-right:auto;
-        margin-left: auto;
         text-align: center;
         margin-bottom: 20px;
         }
@@ -71,7 +74,7 @@
     <h2><a href="mailto:anapauce@usc.edu">anapauce@usc.edu</a></h2>
 
         <div id="button"> 
-            <p>Favorite Color</p>
+            <button id="button-click">Favorite Color</button>
         </div>
         <div id="wrapper">
             <div id="left">
@@ -89,10 +92,10 @@
         </div>
 </div>
 <script>
-    document.querySelector('#button').onclick = function(){
+    document.querySelector('#button-click').onclick = function(){
         document.querySelector('body').style.backgroundColor= '#D3C1D2';
-        document.querySelector('#button').style.backgroundColor= '#FFF';
-        document.querySelector('#button p').style.color= '#000';
+        document.querySelector('#button-click').style.backgroundColor= '#FFF';
+        document.querySelector('#button-click').style.color= '#000';
     }
 </script>
 </body>
