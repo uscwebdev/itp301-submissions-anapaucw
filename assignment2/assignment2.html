@@ -143,17 +143,23 @@ footer p {
 </div>
 
 <script>
+	//1. Turn the cart variable into an interger 
 var cart = document.querySelector('#count').innerHTML; 
 cart= parseInt(cart);
 
+	//2. Enable the function whenever the users click on the image of the album covers
 	document.querySelector('#album1 img').onclick= function () {
+		//3. Make p1 a variable 
 		var p1= parseInt(document.querySelector('#p1').innerHTML);
 
+		//4. Sum the initial amount by the according price 
 		cart= cart+p1;
 
+		//5. Make the changes from the addition to the cart 'count'
 	document.querySelector('#count').innerHTML= cart;
 	}
 
+		//6. Repeat the steps 2-5 accordingly to each price 
 	document.querySelector('#album2 img').onclick= function () {
 		var p2= parseInt(document.querySelector('#p2').innerHTML);
 
