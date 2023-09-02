@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>2 Retro</title>
+
+<style>
+
+body {
+	margin:0px;
+	padding:0px;
+	background-color:#F2E8CF;
+}
+
+
+#content {
+	width: 1500px;
+	margin:0px;
+	padding:0px;
+}
+
+
+h1 {
+	font-size: 4em;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+#header {
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	text-align:center;
+	background-color: #BC4749;
+	color:#F2E8CF;
+}
+
+em {
+	font-size: 1.5em;
+}
+
+#wrapper {
+	width:700px;
+	display:flex;
+	flex-wrap: wrap;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#F2E8CF;
+}
+
+#mycart {
+	width:700px;
+	text-align:center;
+}
+
+#album1 {
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+} 
+
+#album2 {
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+} 
+
+#album3 {
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+} 
+
+.photo img{ 
+	width:500px;
+	height:auto;
+	margin:0px;
+	cursor:pointer;
+}
+
+.photo p {
+	margin-bottom:20px;
+	margin-top:0px;
+}
+
+h2{
+	padding:0px;
+	margin-top:5px;
+	margin-bottom:0px;
+}
+
+footer {
+	background-color: #BC4749;
+	margin:0px;
+	padding:0px;
+	text-align: center;
+	color:#F2E8CF;
+}
+
+footer p {
+	margin:0px;
+	padding:0px;	
+}
+</style>
+</head>
+
+<body>
+<div id="content">
+	<div id="header">
+   	 	<h1>Vintage Album Covers</h1>
+		<p><em>"Feed the soul"</em></p>
+	</div>
+
+<div id="wrapper">
+	<div id="mycart">
+		<p><b>Cart Subtotal: $</b><span id="count">0</span></p>
+	</div>
+
+	<div id="album1" class="photo">
+		<img id="beatles" src="images/beatles.jpg" alt="beatles">
+		<h2>1 (Beatles Album) </h2>
+		<p>$<span id="p1">35.00</span></p>
+	</div>
+
+	<div id="album2" class="photo">
+		<img id="orchestra" src="images/electric.jpg" alt="electric">
+		<h2>Out of the Blue (Electric Light Orchestra Album) </h2>
+		<p>$<span id="p2">24.00</span></p>
+	</div>
+
+	<div id="album3" class="photo">
+		<img id="chili" src="images/redhot.jpg" alt="redhot">
+		<h2>By The Way (Red Hot Chili Peppers Album) </h2>
+		<p>$<span id="p3">27.00</span></p>
+	</div>
+</div>
+	<footer> 
+		<p> University of Southern California ©2023</p>
+	</footer>
+</div>
+
+<script>
+var cart = document.querySelector('#count').innerHTML; 
+cart= parseInt(cart);
+
+	document.querySelector('#album1 img').onclick= function () {
+		var p1= parseInt(document.querySelector('#p1').innerHTML);
+
+		cart= cart+p1;
+
+	document.querySelector('#count').innerHTML= cart;
+	}
+
+	document.querySelector('#album2 img').onclick= function () {
+		var p2= parseInt(document.querySelector('#p2').innerHTML);
+
+		cart= cart+p2;
+
+	document.querySelector('#count').innerHTML= cart;
+	}
+
+	document.querySelector('#album3 img').onclick= function () {
+		var p3= parseInt(document.querySelector('#p3').innerHTML);
+
+		cart= cart+p3;
+
+	document.querySelector('#count').innerHTML= cart;
+	}
+
+</script>
+
+
+</body>
+</html>
