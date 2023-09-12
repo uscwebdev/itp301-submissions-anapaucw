@@ -65,7 +65,7 @@
 
 			operation = '+';
 
-			document.querySelector('#display').value = '';
+			document.querySelector('#display').value = '0';
 		}
 
 	//subtract 
@@ -75,7 +75,7 @@
 
 			operation = '-';
 
-			document.querySelector('#display').value = '';
+			document.querySelector('#display').value = '0';
 		}
 
 	//multiply 
@@ -85,7 +85,7 @@
 
 			operation = '*';
 
-			document.querySelector('#display').value = '';
+			document.querySelector('#display').value = '0';
 		}
 
 	//divide 
@@ -95,7 +95,7 @@
 
 			operation = '/';
 
-			document.querySelector('#display').value = '';
+			document.querySelector('#display').value = '0';
 		}
 
 	//equal
@@ -205,7 +205,7 @@
 		document.querySelector('#eight').onclick=function (){
 			//append to display
 			if (document.querySelector('#display').value==0 ) {
-				currentdisplay = 8
+				currentdisplay = 8;
 			} else {
 				currentdisplay = currentdisplay*10 +8;
 			}
@@ -216,7 +216,7 @@
 		document.querySelector('#nine').onclick=function (){
 			//append to display
 			if (document.querySelector('#display').value==0 ) {
-				currentdisplay = 9
+				currentdisplay = 9;
 			} else {
 				currentdisplay = currentdisplay*10 +9;
 			}
@@ -225,7 +225,14 @@
 
 		//number display 0
 		document.querySelector('#zero').onclick=function (){
-			document.querySelector('#display').value = 0;
+				//append to display
+				if (document.querySelector('#display').value==0 ) {
+					currentdisplay = 0;
+				} else {
+					currentdisplay = currentdisplay*10 +0;
+				}	
+				document.querySelector('#display').value= currentdisplay;
+
 		}
 
 	</script>
