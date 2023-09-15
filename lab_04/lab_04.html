@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>   
+<head>
+
+    <title>JS Photo Gallery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style> 
+        strong {background-color: rgb(23, 92, 23);
+        color:antiquewhite;}
+
+        h1 {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #374a67;
+        margin:0px;
+        text-align: center;
+        font-size: 3em;
+        text-shadow: 5px 5px 10px #fff ;
+        }   
+
+        body {
+            background-color: #CDD6DD;
+        }
+
+        #content {
+            width:1200px;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top:40px;
+        }
+
+        #photos {
+            width:900px;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top:20px;
+        }
+
+        #photos img {
+            width: auto; 
+            height: 210px;
+            margin:10px;
+            cursor:pointer;
+        }
+
+        #main-container {
+            flex-direction: column;
+            align-items: center;
+            width:900px;
+            margin-right:auto;
+            margin-left:auto;
+            margin-top:10px;
+        }
+
+        #main-container img {
+            display:block;
+            max-width:300px;
+        }
+
+        .row {
+            display:flex;
+            justify-content: center;
+            margin-right: 20px;
+            margin-right:20px;
+        }
+
+    </style>
+</head>
+    <body>
+        <div id="content">
+            <h1>July 2023: Rua do Pescadores</h1>
+                <div id="photos" class="row">
+                    <img class="picture" id="beach-img" src="images/beach.JPEG" alt="Playa Camilo">
+                    <img class="picture" id="me-img" src="images/me.JPG" alt="Sagres">
+                    <img class="picture" id="rota-img" src="images/rota.JPG" alt="Raposeria">
+                    <img class="picture" id="sara-img" src="images/sara.JPG" alt="Algarve">
+                    <img class="picture" id="sunset-img" src="images/sunset.JPG" alt="Zambojeria do Mar">
+                </div>
+
+                <div id="main-container" class="row">
+                    <img class="main-img" src="images/beach.JPEG" alt="Playa Camilo">
+                    <p><em class="caption">Playa Camilo</em></p>
+                </div>
+        </div>
+
+    <script>
+
+function changeMainImg(newsrc, newalt) {
+    document.querySelector('.main-img').src= newsrc;
+    document.querySelector('.main-img').alt= newalt;
+    document.querySelector('em').innerHTML=newalt;
+}
+var pictures= document.querySelectorAll('.picture')
+    for (var i=0; pictures.length; i++) {
+        pictures[i].onclick= function () {
+            changeMainImg(this.src,this.alt);
+        }
+    }    
+
+        /* document.querySelector('#me-img').onclick= function (){
+            document.querySelector('#main-container img').src="images/me.JPG";
+            document.querySelector('em').innerHTML="Sagres";
+        }
+
+        document.querySelector('#rota-img').onclick= function () {
+            document.querySelector('#main-container img').src="images/rota.JPG";
+            document.querySelector('em').innerHTML="Raposeria";
+        }
+
+        document.querySelector('#sara-img').onclick= function () {
+            document.querySelector('#main-container img').src="images/sara.JPG";
+            document.querySelector('em').innerHTML="Algarve";
+        }
+
+        document.querySelector('#sunset-img').onclick= function () {
+            document.querySelector('#main-container img').src="images/sunset.JPG";
+            document.querySelector('em').innerHTML="Zambojeria do Mar";
+        }
+
+        document.querySelector('#beach-img').onclick= function () {
+            document.querySelector('#main-container img').src="images/beach.JPEG";
+            document.querySelector('em').innerHTML="Playa Camilo";
+        }
+        */
+
+    </script>
+</body>
+</html>
