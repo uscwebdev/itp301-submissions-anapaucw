@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>   
+<head>
+
+    <title>Liar's Dice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body {
+	margin:0px;
+	padding:0px;
+	background-color:white;
+}
+
+
+#content {
+	width: 1600px;
+	margin:0px;
+	padding:0px;
+}
+
+h1 {
+	font-size: 4em;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+#header {
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+    width:1600px;
+	text-align:center;
+	background-color: #273E47;
+    color: #D8973C;
+}
+
+#input {
+    width:2000px;
+    margin-left: 20px;
+    margin-top:20px;
+    display:flex;
+}
+
+#input p {
+    margin:5px;
+}
+
+#photos {
+    width:1500px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:20px;
+}
+
+#photos img {
+    width: auto; 
+    height: 150px;
+    margin:20px;
+    cursor:pointer;
+}
+
+#results {
+    width:1200px;
+    margin-left: 20px;
+    margin-top:20px;
+}
+
+#results p {
+    font-size: 1.5em;
+}
+
+</style>
+</head>
+
+<body>
+<div id="content"> 
+    <div id="header">
+        <h1>Liar's Dice</h1>
+    </div>
+    
+    <div id="input">
+        <p> Your Guess:  </p> 
+        <input type="text" id="guess-input">
+        <button id="submit-btn">Submit</button> 
+    </div> 
+
+
+    <div id="photos" class="row">
+        <img class="dice" src="images/1.png" alt="one">
+        <img class="dice" src="images/2.png" alt="two">
+        <img class="dice" src="images/3.png" alt="three">
+        <img class="dice" src="images/4.png" alt="four">
+        <img class="dice" src="images/5.png" alt="five">
+    </div>
+
+    <div id="results">
+        <p>You Guessed:<span id="guessresult"> </span></p>
+    </div>
+
+</div>
+
+<script> 
+
+//random variables 
+function randomvariable () {
+    var options= [];
+    for (var i=0; i < 5;i++) {
+        var randomvar = Math.floor(Math.random()* 6) +1;
+            options.push(randomvar);
+    }
+    return options;
+}
+
+//display dice 
+function diceDisplay(options) {
+    var pictures= document.querySelectorAll('.dice')
+    for (var i=0; i < pictures.length; i++) {
+        console.log("i:",i);
+        pictures[i].src= 'images/'+ options[i] + '.png';
+    } 
+}  
+
+function guesschecker(options) {
+    console.log("option: ", options)
+    checkGuess=false;
+    for (var i=0; i< 5; i++) {
+        if (options[i] == parseInt(document.querySelector('#guess-input').value)) {
+            checkGuess = true;
+        }
+    }
+    return checkGuess;
+}
+
+
+//guess checker 
+document.querySelector('#submit-btn').onclick= function () {
+var guess=document.querySelector('#guess-input').value;
+    var variable = randomvariable (); //getting somethingin return 
+    diceDisplay(variable);
+    var checkGuess = guesschecker(variable);
+    console.log(checkGuess)
+if (checkGuess) {
+    document.querySelector('#guessresult').innerHTML= "correct";
+    document.querySelector('#guessresult').style.color="green"; 
+} else {
+    document.querySelector('#guessresult').innerHTML= "incorrect";
+    document.querySelector('#guessresult').style.color="red"; 
+}
+}
+
+</script>
+
+</body>
+</html>
